@@ -4,9 +4,7 @@ package com.nestdigital.Surveillance.controller;
 import com.nestdigital.Surveillance.dao.PatientDao;
 import com.nestdigital.Surveillance.model.Patient;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,8 +14,8 @@ public class PatientController {
     @Autowired
     private PatientDao ptdao;
     @CrossOrigin(origins = "*")
-    @GetMapping("/viewpatients")
-    public List<Patient>viewPatientDetails(){
-        return ptdao.findAll();
+    @PostMapping(path = "/getPatients",consumes = "application/json", produces = "application/json")
+    public List<Patient>viewPatientDetails(@RequestBody Patient patient){
+        return ptdao.getPatient(patient.getFacilityName(),patient.getUnitName());
     }
 }

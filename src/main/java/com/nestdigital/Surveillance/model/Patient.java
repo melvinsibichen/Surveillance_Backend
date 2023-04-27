@@ -22,7 +22,26 @@ public class Patient {
     private  int los;
     private  int sb;
 
+    private String facilityName;
+    private String unitName;
+
     public Patient() {
+    }
+
+    public String getFacilityName() {
+        return facilityName;
+    }
+
+    public void setFacilityName(String facilityName) {
+        this.facilityName = facilityName;
+    }
+
+    public String getUnitName() {
+        return unitName;
+    }
+
+    public void setUnitName(String unitName) {
+        this.unitName = unitName;
     }
 
     public int getId() {
