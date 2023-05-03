@@ -22,26 +22,17 @@ public class Patient {
     private  int los;
     private  int sb;
 
-    private String facilityName;
-    private String unitName;
+    private int locationId;
 
     public Patient() {
     }
 
-    public String getFacilityName() {
-        return facilityName;
+    public int getLocationId() {
+        return locationId;
     }
 
-    public void setFacilityName(String facilityName) {
-        this.facilityName = facilityName;
-    }
-
-    public String getUnitName() {
-        return unitName;
-    }
-
-    public void setUnitName(String unitName) {
-        this.unitName = unitName;
+    public void setLocationId(int locationId) {
+        this.locationId = locationId;
     }
 
     public int getId() {
@@ -122,5 +113,22 @@ public class Patient {
 
     public void setSb(int sb) {
         this.sb = sb;
+    }
+
+    @Override
+    public String toString() {
+        return "Patient{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age='" + age + '\'' +
+                ", gender='" + gender + '\'' +
+                ", mrn='" + mrn + '\'' +
+                ", hr=" + hr +
+                ", sbp=" + sbp +
+                ", tc=" + tc +
+                ", los=" + los +
+                ", sb=" + sb +
+                ", locationId=" + locationId +
+                '}';
     }
 }

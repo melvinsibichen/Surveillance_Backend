@@ -9,8 +9,8 @@ import java.util.List;
 
 public interface PatientDao extends JpaRepository<Patient,Integer> {
 
-    @Query(value = "SELECT * FROM `patients` WHERE `facility_name`= :facilityName and `unit_name`= :unitName",nativeQuery = true)
-    List<Patient> getPatient(@Param("facilityName") String facilityName,@Param("unitName")String unitName);
+    @Query(value = "SELECT * FROM `patients` WHERE `location_id`= :id",nativeQuery = true)
+    List<Patient> getPatient(@Param("id") int id);
 
 
 }

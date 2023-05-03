@@ -15,6 +15,18 @@ public class Facility {
     private String facility;
     private String unit;
 
+
+    private int emptybeds;
+
+
+    public int getEmptybeds() {
+        return emptybeds;
+    }
+
+    public void setEmptybeds(int emptybeds) {
+        this.emptybeds = emptybeds;
+    }
+
     public Facility() {
     }
 
