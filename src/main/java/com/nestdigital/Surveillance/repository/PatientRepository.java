@@ -10,8 +10,8 @@ import java.util.List;
 @Repository
 public interface PatientRepository extends JpaRepository<Patient,Integer> {
 
-    @Query(value = "SELECT * FROM `patients` WHERE `location_id`= :id",nativeQuery = true)
-    List<com.nestdigital.Surveillance.model.Patient> getPatient(@Param("id") int id);
+    @Query(value = "SELECT * FROM `patients` WHERE `unit_fk`= :id",nativeQuery = true)
+    List<Patient> getPatient(@Param("id") int id);
 
 
 }

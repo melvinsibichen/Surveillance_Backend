@@ -14,14 +14,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/facility")
 public class FacilityController {
-    @Autowired
-    public FacilityRepository facilityDao;
-
-//    @CrossOrigin("*")
-//    @GetMapping("/getAllFacility")
-//    public List<Facility> getAllFacility() {
-//        return facilityDao.findAll();
-//    }
 
     @Autowired
     private FacilityServiceImpl facilityServiceImpl;
@@ -30,12 +22,6 @@ public class FacilityController {
     public List<Facility> getFacilityNames() {
         return facilityServiceImpl.getFacilityNames();
     }
-
-//    @CrossOrigin("*")
-//    @GetMapping("/getUnitNames")
-//    public List<String> getUnitNames(){
-//      return facilityDao.GetUnitNAmes();
-//    };
 
 
 }

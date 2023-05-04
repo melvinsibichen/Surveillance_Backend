@@ -11,9 +11,9 @@ import java.util.List;
 public class FacilityServiceImpl implements FacilityService{
 
     @Autowired
-    private FacilityRepository facilityDao;
+    private FacilityRepository facilityRepository;
     @Override
     public List<Facility> getFacilityNames() {
-        return facilityDao.findAll();
+        return facilityRepository.findAll();
     }
 }
