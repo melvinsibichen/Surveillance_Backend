@@ -1,9 +1,9 @@
 package com.nestdigital.Surveillance.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.lang.annotation.Target;
+import java.util.List;
 
 @Entity
 @Table(name = "facilitydetails")
@@ -13,22 +13,22 @@ public class Facility {
     @GeneratedValue()
     private int id;
     private String facility;
-    private String unit;
+
+    @OneToMany(targetEntity = Unit.class,cascade = CascadeType.ALL)
+    @JoinColumn(name = "facility_fk",referencedColumnName = "id")
+    private List<Unit> units;
 
 
-    private int emptybeds;
-
-
-    public int getEmptybeds() {
-        return emptybeds;
-    }
-
-    public void setEmptybeds(int emptybeds) {
-        this.emptybeds = emptybeds;
+    public Facility(int id, String facility, List<Unit> units) {
+        this.id = id;
+        this.facility = facility;
+        this.units = units;
     }
 
     public Facility() {
     }
+
+
 
     public int getId() {
         return id;
@@ -46,11 +46,11 @@ public class Facility {
         this.facility = facility;
     }
 
-    public String getUnit() {
-        return unit;
+    public List<Unit> getUnits() {
+        return units;
     }
 
-    public void setUnit(String unit) {
-        this.unit = unit;
+    public void setUnits(List<Unit> units) {
+        this.units = units;
     }
 }
