@@ -11,8 +11,10 @@ import java.util.List;
 public class PatientServiceImpl implements PatientService{
     @Autowired
     public PatientRepository patientRepository;
+
+
     @Override
-    public List<Patient> getPatient(){
-        return patientRepository.findAll();
+    public List<Patient> getPatientsByUnitId(int id) {
+        return patientRepository.getPatientByUnitId(id);
     }
 }

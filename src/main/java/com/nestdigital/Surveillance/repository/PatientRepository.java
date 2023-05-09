@@ -11,7 +11,7 @@ import java.util.List;
 public interface PatientRepository extends JpaRepository<Patient,Integer> {
 
     @Query(value = "SELECT * FROM `patients` WHERE `unit_fk`= :id",nativeQuery = true)
-    List<Patient> getPatient(@Param("id") int id);
+    List<Patient> getPatientByUnitId(@Param("id") int id);
 
 
 }

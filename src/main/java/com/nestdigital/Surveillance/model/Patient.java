@@ -21,12 +21,11 @@ public class Patient {
     private  int tc;
     private  int los;
     private  int sb;
-    private int unit_id_fk;
 
     public Patient() {
     }
 
-    public Patient(int id, String name, String age, String gender, String mrn, int hr, int sbp, int tc, int los, int sb, int unit_id_fk) {
+    public Patient(int id, String name, String age, String gender, String mrn, int hr, int sbp, int tc, int los, int sb) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -37,18 +36,10 @@ public class Patient {
         this.tc = tc;
         this.los = los;
         this.sb = sb;
-        this.unit_id_fk = unit_id_fk;
     }
 
 
 
-    public int getUnit_id_fk() {
-        return unit_id_fk;
-    }
-
-    public void setUnit_id_fk(int unit_id_fk) {
-        this.unit_id_fk = unit_id_fk;
-    }
 
     public int getId() {
         return id;
